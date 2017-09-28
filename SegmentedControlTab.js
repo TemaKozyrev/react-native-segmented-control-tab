@@ -24,7 +24,7 @@ const TabOption = ({
     tabTextStyle, activeTabTextStyle,
     tabBadgeContainerStyle, activeTabBadgeContainerStyle,
     tabBadgeStyle, activeTabBadgeStyle,
-    onTabPress,
+    onTabPress, activeOpacity
 }) => {
     return (
         <TouchableOpacity style={[
@@ -34,7 +34,7 @@ const TabOption = ({
             firstTabStyle,
             lastTabStyle]}
             onPress={() => onTabPress(index)}
-            activeOpacity={1}>
+            activeOpacity={activeOpacity}>
             <View style={{ flexDirection: "row" }}>
                 <Text style={[
                     styles.tabTextStyle,
@@ -123,7 +123,8 @@ SegmentedControlTab.propTypes = {
     activeTabBadgeContainerStyle: Text.propTypes.style,
     tabBadgeStyle: Text.propTypes.style,
     activeTabBadgeStyle: Text.propTypes.style,
-    borderRadius: PropTypes.number
+    borderRadius: PropTypes.number,
+    activeOpacity: PropTypes.number
 }
 
 SegmentedControlTab.defaultProps = {
@@ -142,7 +143,8 @@ SegmentedControlTab.defaultProps = {
     activeTabBadgeContainerStyle: {},
     tabBadgeStyle: {},
     activeTabBadgeStyle: {},
-    borderRadius: 5
+    borderRadius: 5,
+    activeOpacity: 1
 }
 
 const styles = StyleSheet.create({
